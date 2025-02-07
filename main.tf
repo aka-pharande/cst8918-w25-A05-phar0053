@@ -45,3 +45,13 @@ resource "azurerm_resource_group" "rg" {
   name     = "${var.labelPrefix}-A05-RG"
   location = var.region
 }
+
+# Creating Public IP
+
+resource "azurerm_public_ip" "public_ip" {
+  name                = "${var.labelPrefix}-A05-PIP"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+  allocation_method   = "Static"
+}
+
