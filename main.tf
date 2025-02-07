@@ -55,3 +55,13 @@ resource "azurerm_public_ip" "public_ip" {
   allocation_method   = "Static"
 }
 
+# Creating a VNET
+
+resource "azurerm_virtual_network" "vnet" {
+  name                = "${var.labelPrefix}-A05-VNet"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+  address_space       = ["10.0.0.0/16"]
+}
+
+
