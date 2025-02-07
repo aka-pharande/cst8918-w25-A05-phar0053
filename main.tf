@@ -27,9 +27,7 @@ provider "cloudinit" {
 
 # Define variables
 
-variable "labelPrefix" {
-  default = "myapp"
-}
+variable "labelPrefix" {}
 
 variable "region" {
   default = "East US"
